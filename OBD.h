@@ -9,14 +9,14 @@
 
 #define OBD_TIMEOUT_SHORT 2000 /* ms */
 #define OBD_TIMEOUT_LONG 7000 /* ms */
-#define OBD_SERIAL_BAUDRATE 38400
+#define OBD_SERIAL_BAUDRATE 38400 //3/18 APB Changed from 38400
 #define OBD_RECV_BUF_SIZE 80
 
 #ifndef OBDUART
 #if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega644P__)
 #define OBDUART Serial1
 #else
-#define OBDUART Serial
+#define OBDUART Serial1 //3/17/14 APB Always default to Serial1
 #endif
 #endif
 
@@ -146,7 +146,7 @@ public:
     bool init(byte protocol = 0);
     bool read(byte pid, int& result);
     void write(const char* s);
-    void setProtocol(bool auto, byte h);
+    //void setProtocol(bool auto, byte h);
     // Asynchronized access API
     void setPID(byte pid);
     void applyPIDs();

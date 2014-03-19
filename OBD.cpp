@@ -9,8 +9,8 @@
 #include <avr/pgmspace.h>
 #include "OBD.h"
 
-#define DEBUG Serial
-#define REDIRECT Serial
+//#define DEBUG Serial
+//#define REDIRECT Serial
 
 unsigned int hex2uint16(const char *p)
 {

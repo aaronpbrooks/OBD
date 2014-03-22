@@ -13,10 +13,10 @@
 #define OBD_RECV_BUF_SIZE 80
 
 #ifndef OBDUART
-#if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega644P__)
+#if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega644P__) || || defined(CORE_TEENSY)
 #define OBDUART Serial1
 #else
-#define OBDUART Serial1 //3/17/14 APB Always default to Serial1
+#define OBDUART Serial
 #endif
 #endif
 
